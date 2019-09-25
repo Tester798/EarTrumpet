@@ -294,6 +294,6 @@ Open [https://eartrumpet.app/jmp/fixfonts] now?</value>
     <value>Extra settings</value>
   </data>
   <data name="SettingsUseGlobalMouseWheelHook" xml:space="preserve">
-    <value>Enable global hook for mouse wheel</value>
+    <value>Scroll anywhere to change volume when EarTrumpet is open</value>
   </data>
 </root>
