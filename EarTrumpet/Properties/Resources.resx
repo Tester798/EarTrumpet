@@ -293,4 +293,7 @@ Open [https://eartrumpet.app/jmp/fixfonts] now?</value>
   <data name="ExtraSettingsPageText" xml:space="preserve">
     <value>Extra settings</value>
   </data>
+  <data name="SettingsUseGlobalMouseWheelHook" xml:space="preserve">
+    <value>Enable global hook for mouse wheel</value>
+  </data>
 </root>
