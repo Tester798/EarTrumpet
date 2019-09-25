@@ -1,4 +1,5 @@
 ﻿using EarTrumpet.UI.Helpers;
+using EarTrumpet.Interop.Helpers;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -33,6 +34,8 @@ namespace EarTrumpet.UI.ViewModels
         private readonly AppSettings _settings;
         private bool _closedDuringOpen;
 
+        private MouseHook mh;
+        public Rect winRect;
         public FlyoutViewModel(DeviceCollectionViewModel mainViewModel, Action returnFocusToTray, AppSettings settings)
         {
             _settings = settings;
@@ -56,6 +59,14 @@ namespace EarTrumpet.UI.ViewModels
                 BeginClose(LastInput);
             });
             DisplaySettingsChanged = new RelayCommand(() => BeginClose(InputType.Command));
+
+            mh = new MouseHook();
+            mh.MouseWheelEvent += mh_MouseWheelEvent;
+        }
+
+        public void UpdateWindowPos(double top, double left, double height, double width)
+        {
+            winRect = new Rect(left, top, width, height);
         }
 
         private void OnDeBounceTimerTick(object sender, EventArgs e)
@@ -305,12 +316,31 @@ namespace EarTrumpet.UI.ViewModels
             }
         }
 
+        private int mh_MouseWheelEvent(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            var existing = _mainViewModel.Default;
+            if (existing != null)
+            {
+                if (!winRect.Contains(new Point(e.X, e.Y)))
+                {
+                    existing.IncrementVolume(Math.Sign(e.Delta) * 2);
+                    return -1;
+                }
+            }
+            return 0;
+        }
+
         public void BeginOpen(InputType inputType)
         {
             if (State == FlyoutViewState.Hidden)
             {
                 LastInput = inputType;
                 ChangeState(FlyoutViewState.Opening);
+            }
+
+            if (_settings.UseGlobalMouseWheelHook)
+            {
+                mh.SetHook();
             }
         }
 
@@ -325,6 +355,8 @@ namespace EarTrumpet.UI.ViewModels
             {
                 _closedDuringOpen = true;
             }
+
+            mh.UnHook();
         }
 
         public void OpenFlyout(InputType inputType)

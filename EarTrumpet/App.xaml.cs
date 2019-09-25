@@ -99,11 +99,19 @@ namespace EarTrumpet
             _trayIcon.PrimaryInvoke += (_, type) => _flyoutViewModel.OpenFlyout(type);
             _trayIcon.SecondaryInvoke += (_, __) => _trayIcon.ShowContextMenu(GetTrayContextMenuItems());
             _trayIcon.TertiaryInvoke += (_, __) => _collectionViewModel.Default?.ToggleMute.Execute(null);
-            _trayIcon.Scrolled += (_, wheelDelta) => _collectionViewModel.Default?.IncrementVolume(Math.Sign(wheelDelta) * 2);
+            _trayIcon.Scrolled += trayIconScrolled;
             _trayIcon.SetTooltip(_collectionViewModel.GetTrayToolTip());
             _trayIcon.IsVisible = true;
 
             DisplayFirstRunExperience();
+        }
+
+        private void trayIconScrolled(object _, int wheelDelta)
+        {
+            if (!_settings.UseGlobalMouseWheelHook || _flyoutViewModel.State == FlyoutViewState.Hidden)
+            {
+                _collectionViewModel.Default?.IncrementVolume(Math.Sign(wheelDelta) * 2);
+            }
         }
 
         private void DisplayFirstRunExperience()
