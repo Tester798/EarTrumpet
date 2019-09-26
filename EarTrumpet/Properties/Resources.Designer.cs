@@ -432,6 +432,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always expand.
+        /// </summary>
+        public static string SettingsMoveVolumeInTrayTooltipToRight {
+            get {
+                return ResourceManager.GetString("SettingsMoveVolumeInTrayTooltipToRight", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string SettingsCategoryTitle {
