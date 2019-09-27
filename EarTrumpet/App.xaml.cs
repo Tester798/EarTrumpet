@@ -96,6 +96,7 @@ namespace EarTrumpet
             _settings.SettingsHotkeyTyped += () => _settingsWindow.OpenOrBringToFront();
             _settings.RegisterHotkeys();
             _settings.MoveVolumeInTrayTooltipToRightChanged += (_, __) => _trayIcon.SetTooltip(_collectionViewModel.GetTrayToolTip());
+            _settings.SkipAddingEarTrumpetToTrayTooltipChanged += (_, __) => _trayIcon.SetTooltip(_collectionViewModel.GetTrayToolTip());
 
             _trayIcon.PrimaryInvoke += (_, type) => _flyoutViewModel.OpenFlyout(type);
             _trayIcon.SecondaryInvoke += (_, __) => _trayIcon.ShowContextMenu(GetTrayContextMenuItems());
