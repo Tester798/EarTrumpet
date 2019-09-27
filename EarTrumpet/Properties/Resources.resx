@@ -290,4 +290,10 @@ Open [https://eartrumpet.app/jmp/fixfonts] now?</value>
   <data name="ToggleMuteToolTip" xml:space="preserve">
     <value>Toggle Mute</value>
   </data>
+  <data name="ExtraSettingsPageText" xml:space="preserve">
+    <value>Extra settings</value>
+  </data>
+  <data name="SettingsUseGlobalMouseWheelHook" xml:space="preserve">
+    <value>Scroll anywhere to change volume when EarTrumpet is open</value>
+  </data>
 </root>

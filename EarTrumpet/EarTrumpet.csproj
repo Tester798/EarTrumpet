@@ -116,6 +116,7 @@
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Features.cs" />
     <Compile Include="Interop\Helpers\InputHelper.cs" />
+    <Compile Include="Interop\Helpers\MouseHook.cs" />
     <Compile Include="Interop\Helpers\PackageHelper.cs" />
     <Compile Include="Interop\IShellItemImageFactory.cs" />
     <Compile Include="Interop\SafeHandles\HMODULE.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="UI\Themes\ThemeBindingInfo.cs" />
     <Compile Include="UI\Helpers\TaskbarIconSource.cs" />
     <Compile Include="UI\ViewModels\BackstackViewModel.cs" />
+    <Compile Include="UI\ViewModels\EarTrumpetExtraSettingsPageViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetShortcutsPageViewModel.cs" />
     <Compile Include="Extensibility\AddonInfo.cs" />
     <Compile Include="Extensibility\IAddonAppContent.cs" />

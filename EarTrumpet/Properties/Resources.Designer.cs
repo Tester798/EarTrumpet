@@ -252,6 +252,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extra settings.
+        /// </summary>
+        public static string ExtraSettingsPageText {
+            get {
+                return ResourceManager.GetString("ExtraSettingsPageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find a setting.
         /// </summary>
         public static string FindASettingText {
@@ -410,6 +419,15 @@ namespace EarTrumpet.Properties {
         public static string SearchBoxNoResultsText {
             get {
                 return ResourceManager.GetString("SearchBoxNoResultsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Always expand.
+        /// </summary>
+        public static string SettingsUseGlobalMouseWheelHook {
+            get {
+                return ResourceManager.GetString("SettingsUseGlobalMouseWheelHook", resourceCulture);
             }
         }
         
