@@ -193,6 +193,7 @@
     <Compile Include="Interop\Helpers\AudioPolicyConfigFactoryImplForDownlevel.cs" />
     <Compile Include="Interop\Helpers\InputHelper.cs" />
     <Compile Include="Interop\Helpers\SettingsPageHelper.cs" />
+    <Compile Include="Interop\Helpers\MouseHook.cs" />
     <Compile Include="Interop\Helpers\PackageHelper.cs" />
     <Compile Include="Interop\IShellItemImageFactory.cs" />
     <Compile Include="Interop\MMDeviceAPI\IAudioPolicyConfigFactoryVariantFor21H2.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="UI\Themes\ThemeBindingInfo.cs" />
     <Compile Include="UI\Helpers\TaskbarIconSource.cs" />
     <Compile Include="UI\ViewModels\BackstackViewModel.cs" />
+    <Compile Include="UI\ViewModels\EarTrumpetExtraSettingsPageViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetShortcutsPageViewModel.cs" />
     <Compile Include="Extensibility\IEarTrumpetAddonAppContent.cs" />
     <Compile Include="Extensibility\IEarTrumpetAddonDeviceContent.cs" />

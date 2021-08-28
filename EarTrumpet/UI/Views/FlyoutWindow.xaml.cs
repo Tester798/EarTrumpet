@@ -131,33 +131,29 @@ namespace EarTrumpet.UI.Views
                 newHeight = maxHeight;
             }
 
+            double top = 0;
+            double left = 0;
             switch (taskbar.Location)
             {
                 case WindowsTaskbar.Position.Left:
-                    this.SetWindowPos(taskbar.Size.Bottom - newHeight,
-                              taskbar.ContainingScreen.WorkingArea.Left,
-                              newHeight,
-                              newWidth);
+                    top = taskbar.Size.Bottom - newHeight;
+                    left = taskbar.ContainingScreen.WorkingArea.Left;
                     break;
                 case WindowsTaskbar.Position.Right:
-                    this.SetWindowPos(taskbar.Size.Bottom - newHeight,
-                              taskbar.ContainingScreen.WorkingArea.Right - newWidth,
-                              newHeight,
-                              newWidth);
+                    top = taskbar.Size.Bottom - newHeight;
+                    left = taskbar.ContainingScreen.WorkingArea.Right - newWidth;
                     break;
                 case WindowsTaskbar.Position.Top:
-                    this.SetWindowPos(taskbar.Size.Bottom,
-                              FlowDirection == FlowDirection.RightToLeft ? taskbar.ContainingScreen.WorkingArea.Left : taskbar.ContainingScreen.WorkingArea.Right - newWidth,
-                              newHeight,
-                              newWidth);
+                    top = taskbar.Size.Bottom;
+                    left = FlowDirection == FlowDirection.RightToLeft ? taskbar.ContainingScreen.WorkingArea.Left : taskbar.ContainingScreen.WorkingArea.Right - newWidth;
                     break;
                 case WindowsTaskbar.Position.Bottom:
-                    this.SetWindowPos(taskbar.Size.Top - newHeight,
-                              FlowDirection == FlowDirection.RightToLeft ? taskbar.ContainingScreen.WorkingArea.Left : taskbar.ContainingScreen.WorkingArea.Right - newWidth,
-                              newHeight,
-                              newWidth);
+                    top = taskbar.Size.Top - newHeight;
+                    left = FlowDirection == FlowDirection.RightToLeft ? taskbar.ContainingScreen.WorkingArea.Left : taskbar.ContainingScreen.WorkingArea.Right - newWidth;
                     break;
             }
+            this.SetWindowPos(top, left, newHeight, newWidth);
+            _viewModel.UpdateWindowPos(top, left, newHeight, newWidth);
         }
 
         private void EnableAcrylicIfApplicable(WindowsTaskbar.State taskbar)
