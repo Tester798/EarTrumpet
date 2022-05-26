@@ -163,6 +163,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetExtraSettingsPageViewModel}">
             <StackPanel Orientation="Vertical">
+                <CheckBox HorizontalAlignment="Left"
+                          Content="{x:Static resx:Resources.SettingsUseGlobalMouseWheelHook}"
+                          IsChecked="{Binding UseGlobalMouseWheelHook, Mode=TwoWay}" />
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetLegacySettingsPageViewModel}">

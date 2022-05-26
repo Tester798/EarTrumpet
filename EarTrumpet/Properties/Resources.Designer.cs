@@ -1395,6 +1395,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scroll anywhere to change volume when EarTrumpet is open.
+        /// </summary>
+        public static string SettingsUseGlobalMouseWheelHook {
+            get {
+                return ResourceManager.GetString("SettingsUseGlobalMouseWheelHook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use legacy EarTrumpet icon.
         /// </summary>
         public static string SettingsUseLegacyEarTrumpetIcon {
