@@ -223,6 +223,7 @@ namespace EarTrumpet
                 new SettingsPageViewModel[]
                     {
                         new EarTrumpetShortcutsPageViewModel(_settings),
+                        new EarTrumpetExtraSettingsPageViewModel(_settings),
                         new EarTrumpetLegacySettingsPageViewModel(_settings),
                         new EarTrumpetAboutPageViewModel(() => _errorReporter.DisplayDiagnosticData(), _settings)
                     });

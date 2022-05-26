@@ -644,4 +644,7 @@ Open [https://eartrumpet.app/jmp/fixfonts] now?</value>
   <data name="SettingsAbsoluteVolumeUpText" xml:space="preserve">
     <value>Increase volume for all devices</value>
   </data>
+  <data name="ExtraSettingsPageText" xml:space="preserve">
+    <value>Extra settings</value>
+  </data>
 </root>

@@ -161,6 +161,10 @@
                 </Grid>
             </StackPanel>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EarTrumpetExtraSettingsPageViewModel}">
+            <StackPanel Orientation="Vertical">
+            </StackPanel>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetLegacySettingsPageViewModel}">
             <StackPanel Orientation="Vertical">
                 <CheckBox HorizontalAlignment="Left"

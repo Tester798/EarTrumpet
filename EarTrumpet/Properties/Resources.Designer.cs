@@ -684,6 +684,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extra settings.
+        /// </summary>
+        public static string ExtraSettingsPageText {
+            get {
+                return ResourceManager.GetString("ExtraSettingsPageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find a setting.
         /// </summary>
         public static string FindASettingText {
