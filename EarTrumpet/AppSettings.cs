@@ -10,6 +10,7 @@ namespace EarTrumpet
     public class AppSettings
     {
         public event EventHandler<bool> UseLegacyIconChanged;
+        public event EventHandler<bool> MoveVolumeInTrayTooltipToRightChanged;
         public event Action FlyoutHotkeyTyped;
         public event Action MixerHotkeyTyped;
         public event Action SettingsHotkeyTyped;
@@ -143,6 +144,16 @@ namespace EarTrumpet
         {
             get => _settings.Get("UseGlobalMouseWheelHook", false);
             set => _settings.Set("UseGlobalMouseWheelHook", value);
+        }
+
+        public bool MoveVolumeInTrayTooltipToRight
+        {
+            get => _settings.Get("MoveVolumeInTrayTooltipToRight", false);
+            set
+            {
+                _settings.Set("MoveVolumeInTrayTooltipToRight", value);
+                MoveVolumeInTrayTooltipToRightChanged?.Invoke(null, MoveVolumeInTrayTooltipToRight);
+            }
         }
 
         public bool HasShownFirstRun

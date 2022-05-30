@@ -9,6 +9,12 @@
             set => _settings.UseLogarithmicVolume = value;
         }
         
+        public bool MoveVolumeInTrayTooltipToRight
+        {
+            get => _settings.MoveVolumeInTrayTooltipToRight;
+            set => _settings.MoveVolumeInTrayTooltipToRight = value;
+        }
+        
         public EarTrumpetCommunitySettingsPageViewModel(AppSettings settings) : base(null)
         {
             _settings = settings;
