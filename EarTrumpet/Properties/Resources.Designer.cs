@@ -1341,6 +1341,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move volume value in tray tooltip to the right.
+        /// </summary>
+        public static string SettingsMoveVolumeInTrayTooltipToRight {
+            get {
+                return ResourceManager.GetString("SettingsMoveVolumeInTrayTooltipToRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar à General.
         /// </summary>
         public static string SettingsCategoryTitle {

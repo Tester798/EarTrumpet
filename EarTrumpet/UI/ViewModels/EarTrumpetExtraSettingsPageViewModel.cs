@@ -10,6 +10,12 @@ namespace EarTrumpet.UI.ViewModels
             set => _settings.UseGlobalMouseWheelHook = value;
         }
 
+        public bool MoveVolumeInTrayTooltipToRight
+        {
+            get => _settings.MoveVolumeInTrayTooltipToRight;
+            set => _settings.MoveVolumeInTrayTooltipToRight = value;
+        }
+
         private readonly AppSettings _settings;
 
         public EarTrumpetExtraSettingsPageViewModel(AppSettings settings) : base(null)

@@ -240,7 +240,18 @@ namespace EarTrumpet.UI.ViewModels
             if (Default != null)
             {
                 var stateText = Default.IsMuted ? Properties.Resources.MutedText : $"{Default.Volume}%";
-                var prefixText = $"EarTrumpet: {stateText} - ";
+                String prefixText;
+                String suffixText;
+                if (_settings.MoveVolumeInTrayTooltipToRight)
+                {
+                    prefixText = $"EarTrumpet: ";
+                    suffixText = $" - {stateText}";
+                }
+                else
+                {
+                    prefixText = $"EarTrumpet: {stateText} - ";
+                    suffixText = "";
+                }
                 var deviceName = $"{Default.DeviceDescription} ({Default.EnumeratorName})";
 
                 // Remote Audio devices may not contain an enumerator name or description.
@@ -262,8 +273,8 @@ namespace EarTrumpet.UI.ViewModels
                 }
 
                 // API Limitation: "less than 64 chars" for the tooltip.
-                deviceName = deviceName.Substring(0, Math.Min(63 - prefixText.Length, deviceName.Length));
-                return prefixText + deviceName;
+                deviceName = deviceName.Substring(0, Math.Min(63 - (prefixText.Length + suffixText.Length), deviceName.Length));
+                return prefixText + deviceName + suffixText;
             }
             else
             {
