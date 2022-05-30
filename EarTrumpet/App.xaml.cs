@@ -111,6 +111,7 @@ namespace EarTrumpet
             Settings.AbsoluteVolumeDownHotkeyTyped += AbsoluteVolumeDecrement;
             Settings.RegisterHotkeys();
             Settings.MoveVolumeInTrayTooltipToRightChanged += (_, __) => UpdateTrayTooltip();
+            Settings.SkipAddingEarTrumpetToTrayTooltipChanged += (_, __) => UpdateTrayTooltip();
 
             _trayIcon.PrimaryInvoke += (_, type) => _flyoutViewModel.OpenFlyout(type);
             _trayIcon.SecondaryInvoke += (_, args) => _trayIcon.ShowContextMenu(GetTrayContextMenuItems(), args.Point);

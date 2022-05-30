@@ -241,17 +241,19 @@ namespace EarTrumpet.UI.ViewModels
             if (Default != null)
             {
                 var stateText = Default.IsMuted ? Properties.Resources.MutedText : $"{Default.Volume}%";
-                String prefixText;
-                String suffixText;
+                var prefixText = "";
+                var suffixText = "";
+                if (!_settings.SkipAddingEarTrumpetToTrayTooltip)
+                {
+                    prefixText = "EarTrumpet: ";
+                }
                 if (_settings.MoveVolumeInTrayTooltipToRight)
                 {
-                    prefixText = $"EarTrumpet: ";
                     suffixText = $" - {stateText}";
                 }
                 else
                 {
-                    prefixText = $"EarTrumpet: {stateText} - ";
-                    suffixText = "";
+                    prefixText = $"{prefixText}{stateText} - ";
                 }
                 var deviceName = $"{Default.DeviceDescription} ({Default.EnumeratorName})";
 

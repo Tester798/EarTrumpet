@@ -1377,6 +1377,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip adding "EarTrumpet" to tray tooltip.
+        /// </summary>
+        public static string SettingsSkipAddingEarTrumpetToTrayTooltip {
+            get {
+                return ResourceManager.GetString("SettingsSkipAddingEarTrumpetToTrayTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string SettingsCategoryTitle {

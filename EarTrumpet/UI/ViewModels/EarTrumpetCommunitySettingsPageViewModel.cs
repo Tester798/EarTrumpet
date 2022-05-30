@@ -15,6 +15,12 @@
             set => _settings.MoveVolumeInTrayTooltipToRight = value;
         }
         
+        public bool SkipAddingEarTrumpetToTrayTooltip
+        {
+            get => _settings.SkipAddingEarTrumpetToTrayTooltip;
+            set => _settings.SkipAddingEarTrumpetToTrayTooltip = value;
+        }
+        
         public EarTrumpetCommunitySettingsPageViewModel(AppSettings settings) : base(null)
         {
             _settings = settings;
