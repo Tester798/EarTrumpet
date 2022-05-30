@@ -16,6 +16,12 @@ namespace EarTrumpet.UI.ViewModels
             set => _settings.MoveVolumeInTrayTooltipToRight = value;
         }
 
+        public bool SkipAddingEarTrumpetToTrayTooltip
+        {
+            get => _settings.SkipAddingEarTrumpetToTrayTooltip;
+            set => _settings.SkipAddingEarTrumpetToTrayTooltip = value;
+        }
+
         private readonly AppSettings _settings;
 
         public EarTrumpetExtraSettingsPageViewModel(AppSettings settings) : base(null)

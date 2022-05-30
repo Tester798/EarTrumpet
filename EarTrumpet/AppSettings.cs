@@ -10,6 +10,7 @@ namespace EarTrumpet
     {
         public event EventHandler<bool> UseLegacyIconChanged;
         public event EventHandler<bool> MoveVolumeInTrayTooltipToRightChanged;
+        public event EventHandler<bool> SkipAddingEarTrumpetToTrayTooltipChanged;
         public event Action FlyoutHotkeyTyped;
         public event Action MixerHotkeyTyped;
         public event Action SettingsHotkeyTyped;
@@ -146,6 +147,16 @@ namespace EarTrumpet
             {
                 _settings.Set("MoveVolumeInTrayTooltipToRight", value);
                 MoveVolumeInTrayTooltipToRightChanged?.Invoke(null, MoveVolumeInTrayTooltipToRight);
+            }
+        }
+
+        public bool SkipAddingEarTrumpetToTrayTooltip
+        {
+            get => _settings.Get("SkipAddingEarTrumpetToTrayTooltip", false);
+            set
+            {
+                _settings.Set("SkipAddingEarTrumpetToTrayTooltip", value);
+                SkipAddingEarTrumpetToTrayTooltipChanged?.Invoke(null, SkipAddingEarTrumpetToTrayTooltip);
             }
         }
 

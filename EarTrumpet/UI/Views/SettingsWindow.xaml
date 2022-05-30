@@ -169,6 +169,9 @@
                 <CheckBox HorizontalAlignment="Left"
                           Content="{x:Static resx:Resources.SettingsMoveVolumeInTrayTooltipToRight}"
                           IsChecked="{Binding MoveVolumeInTrayTooltipToRight, Mode=TwoWay}" />
+                <CheckBox HorizontalAlignment="Left"
+                          Content="{x:Static resx:Resources.SettingsSkipAddingEarTrumpetToTrayTooltip}"
+                          IsChecked="{Binding SkipAddingEarTrumpetToTrayTooltip, Mode=TwoWay}" />
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetLegacySettingsPageViewModel}">

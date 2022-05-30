@@ -653,4 +653,7 @@ Open [https://eartrumpet.app/jmp/fixfonts] now?</value>
   <data name="SettingsMoveVolumeInTrayTooltipToRight" xml:space="preserve">
     <value>Move volume value in tray tooltip to the right</value>
   </data>
+  <data name="SettingsSkipAddingEarTrumpetToTrayTooltip" xml:space="preserve">
+    <value>Skip adding "EarTrumpet" to tray tooltip</value>
+  </data>
 </root>
